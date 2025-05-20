@@ -1,4 +1,19 @@
- name: "Combination of 2 reforms"
-  reforms:
-    - module.of.first_reform
-    - module.of.second_reform
+name: Combination of 2 reforms
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run first reform
+        run: python -m module.of.first_reform
+
+      - name: Run second reform
+        run: python -m module.of.second_reform
