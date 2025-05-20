@@ -1,25 +1,8 @@
-name: yaml-file for test
-
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-   branches:
-     -'*'
-
-jobs:
-  build:
-    run-on: ubu-test
-
-
-  steps:
-    - user: actiona/checkout@v3
-
-    - name: Setup .NET core
-      user: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8'
-
-    - name: run unit tests
-      run: cd testingProject && dotnet test
+- name: Income below 50,000 and Age at or over 55 qualifies
+  period: 2021-12-01
+  input:
+    age: 55 # Defined with the period DAY
+    income: # Defined with the period YEAR
+      2021: 49999
+  output:
+    eligible: True
