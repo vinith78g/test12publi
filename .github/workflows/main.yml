@@ -1,4 +1,4 @@
-- name: "Combination of 2 reforms"
+ name: "Combination of 2 reforms"
   reforms:
     - module.of.first_reform
     - module.of.second_reform
