@@ -1,4 +1,4 @@
-- name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
+- name:  IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €
   period: 2012
   absolute_error_margin: 0.5
   input:
