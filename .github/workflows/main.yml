@@ -1,8 +1,8 @@
-- name: Income below 50,000 and Age at or over 55 qualifies
-  period: 2021-12-01
+- name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
+  period: 2012
+  absolute_error_margin: 0.5
   input:
-    age: 55 # Defined with the period DAY
-    income: # Defined with the period YEAR
-      2021: 49999
+    salaire_imposable: 20000
+    salaire_brut: 20000
   output:
-    eligible: True
+    irpp: -1181
