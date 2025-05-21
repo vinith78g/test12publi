@@ -1,8 +1,26 @@
-- name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
-  period: 2012
-  absolute_error_margin: 0.5
-  input:
-    salaire_imposable: 20000
-    salaire_brut: 20000
-  output:
-    irpp: -1181
+name: Test IRPP Reform
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test-irpp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run test case for IRPP
+        run: |
+          python test_irpp_case.py
