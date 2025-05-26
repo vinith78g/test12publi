@@ -1,8 +1,29 @@
-name: hello-world
-on: push
-jobs:
-  my-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: my-step
-        run: echo "Hello World!"
+import { createServer } from 'node:http';
+const hostname = '127.0.0.1';
+const port = 3000;
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+
+ID: myproject
+_schema-version: '3.1'
+version: 0.0.1
+
+modules:
+
+ - name: MyNode
+   type: npm
+   path: .
+
+   {
+    "name": "Test",
+    "description": "Test",
+    "version": "1.0.0",
+    "main": "main.js",
+    "engines" : { "node" : ">22" }
+}
